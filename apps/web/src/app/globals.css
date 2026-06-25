@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 4%;
+    --foreground: 210 40% 98%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --border: 217 33% 17%;
+    --radius: 0.75rem;
+  }
+  * { box-sizing: border-box; border-color: hsl(var(--border)); }
+  body { background: hsl(var(--background)); color: hsl(var(--foreground)); font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+  :focus-visible { outline: 2px solid #22d3ee; outline-offset: 2px; border-radius: 4px; }
+}
+
+@layer utilities {
+  .card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius);
+  }
+  .btn-primary {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 44px; padding: 0 1.25rem;
+    background: #06b6d4; color: #0a0f1e; font-weight: 600; font-size: 0.875rem;
+    border-radius: calc(var(--radius) - 2px);
+    transition: background 0.15s;
+    cursor: pointer; border: none;
+  }
+  .btn-primary:hover { background: #22d3ee; }
+  .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+  .btn-ghost {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 44px; padding: 0 1.25rem;
+    background: transparent; color: hsl(var(--foreground)); font-weight: 500; font-size: 0.875rem;
+    border: 1px solid rgba(255,255,255,0.12); border-radius: calc(var(--radius) - 2px);
+    transition: background 0.15s, border-color 0.15s;
+    cursor: pointer;
+  }
+  .btn-ghost:hover { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.2); }
+  .input {
+    width: 100%; padding: 0.625rem 0.875rem;
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: calc(var(--radius) - 2px); color: hsl(var(--foreground)); font-size: 0.875rem;
+    transition: border-color 0.15s;
+  }
+  .input:focus { outline: none; border-color: #06b6d4; }
+  .tag-green { background: rgba(74,222,128,0.1); color: #4ade80; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; }
+  .tag-red   { background: rgba(248,113,113,0.1); color: #f87171; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; }
+  .tag-yellow{ background: rgba(250,204,21,0.1);  color: #facc15; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; }
+}
